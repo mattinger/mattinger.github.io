@@ -1,6 +1,21 @@
 <html>
 <body>
-Hello
+  <div id="reposJson">
+  </div>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"> </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.ajax({
+        type: "GET",
+        url: "/user/repos/",
+        success: function(data) {
+          $('#reposJson').html(data);
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
 
